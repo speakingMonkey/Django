@@ -1,10 +1,10 @@
 # Django博客系统
 =========
-##使用pythonweb框架django写的网站
-django版本1.9.6
-数据库:sqlite3
-前端：bootsharp
-具体文章访问个人博客:www.wanjiaxing.top
+##使用pythonweb框架django写的网站<br>
+django版本1.9.6<br>
+数据库:sqlite3<br>
+前端：bootsharp<br>
+具体文章访问个人博客:www.wanjiaxing.top<br>
 
 
 版本1.0<br>

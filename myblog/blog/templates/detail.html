@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}{{ blog.title }}{% endblock %}
+{% block left2 %}
+<div id="Left2"">
+<div style="background:#000;height:50px"></div>
+<span class="label label-default">{{ blog.category.name }}</span>
+<div class="header">
+    <span><a href="{% url 'blog_get_blogs' %}">博客</a> >> <a href="{% url 'blog_get_detail' blog.id %}">{{ blog.title }}</a></span>
+</div>
+<div class="content">
+    <div class="blog">
+        <div class="title">
+            <a href="#"><h3>{{ blog.title }}</h3></a>
+        </div>
+        <div class="info">
+            <span class="author" style="color: #000">{{ blog.author }}</span>
+            <span class="created" style="color: #ccffff">{{ blog.created|date:"Y-m-d H:i" }}</span>
+        </div>
+        <div class="summary">
+            {{ blog.content|linebreaks }}
+        </div>
+    </div>
+	<div id="line"></div>
+    <div class="comment">
+        <div class="comments-display" style="padding-top: 20px;">
+            <h3>评论</h3>
+            {% for comment in comments %}
+                <div class="comment-field" style="padding-top: 10px;">
+                    {{ comment.name }} 说: {{ comment.content }}
+					<div id="line"></div>
+                </div>
+            {% endfor %}
+        </div>
+		<div style="height:60px">
+		</div>
+		<div id="line"></div>
+        <div class="comment-post" style="padding-top: 20px;">
+            <h3>提交评论</h3>
+            <form action="{% url 'blog_get_detail' blog.id %}" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="input-field" style="padding-top: 10px">
+                        {{ field.label }}: {{ field }}
+                    </div>
+                    <div class="error" style="color: red;">
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+				<button type="submit" class="btn btn-success">提交</button>
+            </form>
+			
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

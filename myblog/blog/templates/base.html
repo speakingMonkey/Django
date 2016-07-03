@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <title>{% block title %}默认标题{% endblock %}</title>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <div>
+   <script type="text/javascript">
+    $(function() {
+        $("li").click(function() {
+            //          第一种方法
+            //          $("li").removeClass("active");//删除指定的 class 属性
+            //          $(this).addClass("active");//向被选元素添加一个或多个类
+            // $(this).toggleClass("active");//该函数会对被选元素进行添加/删除类的切换操作
+            var text = $(this).text();//获取当前选中的文本
+            //或者使用第二种方法
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+    })
+</script>    
+   <style type="text/css">
+#line {
+ height:1px;
+ width:100%;
+ background:#ccc;
+ overflow:hidden;
+ }
+#Left1{
+    width:10%;
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+    background:#111;
+}
+#Left2{
+    width:50%;
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+    background:#fff;
+}
+#Left3{
+    width:5%;
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+    background:#333;
+}
+#Left4{
+    width:25%;
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+    background:#fff;
+}
+#Left5{
+    width:10%;
+    float:left;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+    background:#555;
+}
+html
+    {
+      height:100%;
+    }
+
+</style>
+</head>
+<body style="height:100%;">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">博客</a>
+   </div>
+   <div>
+      <form class="navbar-form navbar-left" role="search">
+         <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入你感兴趣的内容...">
+         </div>
+         <button type="submit" class="btn btn-default">搜索</button>
+      </form>    
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">首页</a></li>
+         <li><a href="#">分类一</a></li>
+		 <li><a href="#">分类二</a></li>
+		 <li><a href="#">分类三</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               登录用户<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">我的主页</a></li>
+               <li><a href="#">私信</a></li>
+               <li><a href="#">退出</a></li>           
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+<div id="Left1">Content-Left</div>
+{% block left2 %}<div id="Left2">Content-Left
+</div>{% endblock %}
+<div id="Left3">Content-Left</div>
+<div id="Left4">
+<div style="background:#fff;height:54px"></div>
+<h3>关于本人<span class="label label-info">啦啦啦</span></h3>
+<div id="line"></div>
+<div style="height:10px;"></div>
+<img src="http://imgs.aixifan.com/content/2016_05_18/1463581893.png" class="img-thumbnail"/>
+<div style="width:80%;text-align:center;margin-left:auto;margin-right:auto;" ><h3>我的名字<span class="label label-warning">是我是我是我</span></h3></div>
+<div style="height:10px;"></div>
+<div id="line"></div>
+<div style="height:10px;"></div>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;作为爱奇艺会员独播剧，《余罪》第一季播出后，大受欢迎，引起了网友的强烈追剧欲望，然而就在第二季呼之欲出之时，6月10日网上就泄露了原定6月13日才播出的《余罪》第二季前5集。紧接着，第二季全集都有了网盘下载。无奈之下，爱奇艺只好提前一天（6月12日）将第二季全集上线，目前只能会员观看。
+</p>
+<div style="height:10px;"></div>
+<div id="line" style="width:80%;text-align:center;margin-left:auto;margin-right:auto;" ></div>
+<div style="height:10px;"></div>
+<h4>热门标签</h4>
+<span class="label label-default">默认标签</span>
+<span class="label label-primary">主要标签</span>
+<span class="label label-success">成功标签</span>
+<span class="label label-info">信息标签</span>
+<span class="label label-warning">警告标签</span>
+<span class="label label-danger">危险标签</span>
+<span class="label label-default">默认标签</span>
+<span class="label label-primary">主要标签</span>
+<span class="label label-success">成功标签</span>
+<span class="label label-info">信息标签</span>
+<span class="label label-warning">警告标签</span>
+<span class="label label-danger">危险标签</span>
+<span class="label label-default">默认标签</span>
+<span class="label label-primary">主要标签</span>
+<span class="label label-success">成功标签</span>
+<span class="label label-info">信息标签</span>
+<span class="label label-warning">警告标签</span>
+<span class="label label-danger">危险标签</span>
+<div style="height:10px;"></div>
+<div id="line"></div>
+<div style="height:10px;"></div>
+<embed src="http://www.xiami.com/widget/84800832_1776190965,_300_160_ffffff_999999_1/multiPlayer.swf" type="application/x-shockwave-flash" width="300" height="160" wmode="opaque"></embed>
+</div>
+<div id="Left5">Content-Left</div>
+</body>
+</html>

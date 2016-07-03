@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}首页{% endblock %}
+{% block left2 %}
+<div id="Left2" style="height:100%;">
+    <div style="background:#000;height:50px"></div>
+    <h3>最新动态<span class="label label-default">我的文章</span></h3>
+    <div id="line"></div>
+        {% for blog in blogs %}
+	<div>  
+        <div>
+            <span  style="color: #bbb;">来自分类>>{{ blog.category.name }}</span>
+		<div style="heght:20px;">
+            <a href="/detail/{{ blog.id }}"><h5><strong><font color=#2255b2>{{ blog.title }}</font></strong></h5></a>
+        </div>
+            <span class="author" style="color: #4a86e8"><strong>{{ blog.author }}</strong></span>
+            <span class="created" style="color: #6aa84f">{{ blog.created|date:"Y-m-d H:i" }}</span>
+        </div>
+		
+        <div class="summary">
+            {{ blog.content|linebreaks|truncatechars:100 }}
+			 <a href="/detail/{{ blog.id }}" style="color:#2255b2;font-weight:bold;">显示全部</a>
+
+			    <div id="line"></div>
+
+        </div>
+		<div id="line"></div>
+    </div>	 
+        {% endfor %}
+	<div style="height:30px;">
+	</div>
+
+<ul class="pagination" style="display: block;width: 300px;margin: 0 auto;position: relative;">
+  <li><a href="#">&laquo;</a></li>
+  <li><a id="p1" href="/1">1</a></li>
+  <li><a href="/2">2</a></li>
+  <li><a href="/3">3</a></li>
+  <li><a href="/4">4</a></li>
+  <li><a href="/5">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+</div>	
+{% endblock %}

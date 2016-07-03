@@ -15,7 +15,7 @@ django版本1.9.6<br>
 4分页功能<br>
 
 
-###使用方法: cmd>>移动到biog目录 >>输入 python manage.py runserver<br>
+###使用方法: cmd>>移动到blog目录 >>输入 python manage.py runserver<br>
 ![image](https://github.com/HuRuWo/Django/blob/master/QQ%E6%88%AA%E5%9B%BE20160703122035.png)
 
 ###演示页面<br>
